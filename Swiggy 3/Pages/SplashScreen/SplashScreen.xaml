@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Swiggy_3.Pages.SplashScreen.SplashScreen"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image x:Name="splashscreen" Source="SwiggyLogo.png" Aspect="AspectFit" 
+                   HeightRequest="50" HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="CenterAndExpand" BackgroundColor="White"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

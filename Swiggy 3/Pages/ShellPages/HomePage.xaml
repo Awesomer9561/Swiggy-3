@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:shell ="clr-namespace:Swiggy_3.Pages.ShellPages"
+             x:Class="Swiggy_3.Pages.ShellPages.HomePage"
+       Shell.NavBarIsVisible="False">
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" 
+                Value="White" />
+                <Setter Property="Shell.ForegroundColor" 
+                Value="White" />
+                <Setter Property="Shell.TitleColor" 
+                Value="Orange" />
+                <Setter Property="Shell.DisabledColor" 
+                Value="LightGray" />
+                <Setter Property="Shell.UnselectedColor" 
+                Value="Gray" />
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <Tab Title="Swiggy" Icon="swiggyLogo.png">
+            <!--<ShellContent ContentTemplate="{DataTemplate shell:Swiggy}"/>-->
+            <shell:Swiggy/>
+        </Tab>
+        <Tab  Title="Search" Icon="search.png">
+            <!--<ShellContent ContentTemplate="{DataTemplate shell:SearchPage}"/>-->
+            <shell:SearchPage/>
+        </Tab>
+        <Tab  Title="Cart" Icon="cart.png">
+            <!--<ShellContent ContentTemplate="{DataTemplate shell:Cart}"/>-->
+            <shell:Cart/>
+        </Tab>
+        <Tab Title="Profile" Icon="account.png">
+            <shell:Profile/>
+            <!--<ShellContent ContentTemplate="{DataTemplate shell:Profile}"/>-->
+        </Tab>
+    </TabBar>
+</Shell>

@@ -1,0 +1,74 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\JosefinSans-Bold.ttf" />
+    <None Remove="Fonts\JosefinSans-Regular.ttf" />
+    <None Remove="Fonts\JosefinSans-SemiBold.ttf" />
+    <None Remove="Fonts\JosefinSans-Thin.ttf" />
+    <None Remove="Fonts\Poppins-Black.otf" />
+    <None Remove="Fonts\Poppins-Bold.otf" />
+    <None Remove="Fonts\Poppins-Medium.otf" />
+    <None Remove="Fonts\Poppins-Regular.otf" />
+    <None Remove="Fonts\Poppins-SemiBold.otf" />
+    <None Remove="Fonts\Poppins-Thin.otf" />
+    <None Remove="Fonts\Roboto-Black.ttf" />
+    <None Remove="Fonts\Roboto-Bold.ttf" />
+    <None Remove="Fonts\Roboto-Medium.ttf" />
+    <None Remove="Fonts\Roboto-Regular.ttf" />
+    <None Remove="Fonts\Roboto-Thin.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Fonts\JosefinSans-Bold.ttf" />
+    <EmbeddedResource Include="Fonts\JosefinSans-Regular.ttf" />
+    <EmbeddedResource Include="Fonts\JosefinSans-SemiBold.ttf" />
+    <EmbeddedResource Include="Fonts\JosefinSans-Thin.ttf" />
+    <EmbeddedResource Include="Fonts\Poppins-Black.otf" />
+    <EmbeddedResource Include="Fonts\Poppins-Bold.otf" />
+    <EmbeddedResource Include="Fonts\Poppins-Medium.otf" />
+    <EmbeddedResource Include="Fonts\Poppins-Regular.otf" />
+    <EmbeddedResource Include="Fonts\Poppins-SemiBold.otf" />
+    <EmbeddedResource Include="Fonts\Poppins-Thin.otf" />
+    <EmbeddedResource Include="Fonts\Roboto-Black.ttf" />
+    <EmbeddedResource Include="Fonts\Roboto-Bold.ttf" />
+    <EmbeddedResource Include="Fonts\Roboto-Medium.ttf" />
+    <EmbeddedResource Include="Fonts\Roboto-Regular.ttf" />
+    <EmbeddedResource Include="Fonts\Roboto-Thin.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Pages\ShellPages\Cart.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ShellPages\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ShellPages\Profile.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ShellPages\SearchPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\ShellPages\Swiggy.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\SplashScreen\SplashScreen.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

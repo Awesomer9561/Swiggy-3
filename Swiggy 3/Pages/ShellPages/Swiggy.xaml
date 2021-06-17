@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Swiggy_3.Pages.ShellPages.Swiggy">
+
+    <ContentPage.Resources>
+        <Style TargetType="CollectionView" x:Key="ItemCollection">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/> 
+        </Style>
+        
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Header-->
+            <Grid RowDefinitions="*,*" ColumnDefinitions="7.5*,2.5*"
+                  BackgroundColor="Transparent" HeightRequest="100"
+                  Margin="10,10,10,0">
+                <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                    <Image Source="location.png" Aspect="AspectFit" 
+                           HorizontalOptions="Start"
+                           HeightRequest="20"/>
+                    <Label Text="Home" TextColor="Black"
+                           FontSize="20" FontAttributes="Bold"
+                           />
+                </StackLayout>
+
+                <Label Text="______Address______" 
+                       Grid.Row="1" Grid.Column="0"
+                       FontSize="12"/>
+
+                <StackLayout Orientation="Horizontal" Grid.RowSpan="2" Grid.Column="1"
+                             VerticalOptions="Center">
+                    <Image Source="offers.png" Aspect="AspectFit" HeightRequest="20" 
+                           HorizontalOptions="Start"/>
+                    <Label Text="Offers" FontSize="20" 
+                            TextColor="Black"/>
+                </StackLayout>
+                             
+            </Grid>
+            
+            <!-- Separator -->
+            <BoxView BackgroundColor="#8395a7" HeightRequest="0.5" 
+                     WidthRequest="400" HorizontalOptions="Fill" Margin="0,-5, 0, 10">
+            </BoxView>
+            
+            <!--Scroll Veiw-->
+            <ScrollView VerticalScrollBarVisibility="Never">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Image Source="SwiggyLogo.png" Aspect="AspectFit" 
+                               VerticalOptions="Center" HeightRequest="20"/>
+                        <Label VerticalOptions="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Get Free Delivery andBuy 1 Get 1 free, "/>
+                                    <Span Text="Get SWIGGY SUPER" TextColor="Orange" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Image Source="arrow.png" Aspect="AspectFit" 
+                               VerticalOptions="Center" HeightRequest="15"/>
+                    </StackLayout>
+                    <!-- Categories -->
+                    <CollectionView x:Name="CategoryColumn" HeightRequest="180"
+                                    SelectionMode="Single" ItemsLayout="HorizontalList" 
+                                    ItemTemplate="{StaticResource CollectionViewSingle}"
+                                    SelectionChanged="CategorySelected"/>
+
+                    <!-- Slider -->
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="0,10">
+                        <BoxView Color="#b2bec3" HorizontalOptions="Start"
+                             HeightRequest="7" WidthRequest="80" CornerRadius="10"/>
+                        <BoxView Color="Orange" HorizontalOptions="Start"
+                             HeightRequest="10" WidthRequest="30" CornerRadius="10"
+                             Margin="0,-15,0,0"/>
+                    </StackLayout>
+                    
+                    <!-- Card -->
+                    <Frame CornerRadius="30" Margin="10,0"
+                           HeightRequest="200" WidthRequest="300"
+                           Padding="0">
+                        <Image Source="card2.png" 
+                               Aspect="AspectFill"/>
+                    </Frame>
+                    <Button Text="Buy Now!" FontSize="12" FontAttributes="Bold"
+                            BackgroundColor="BlanchedAlmond"
+                            Margin="40,-50,230,0" HeightRequest="30"/>
+
+                    <!-- Carousal View Offers-->
+                    <CarouselView x:Name="carousalOffers" HeightRequest="20" 
+                                  HorizontalOptions="Center" Margin="15, 25, 15, 5">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding .}" HorizontalTextAlignment="Center"/>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+
+                    <!-- Separator -->
+                    <BoxView BackgroundColor="#8395a7" HeightRequest="1" 
+                     WidthRequest="400" Margin="0,-5, 0, 10">
+                    </BoxView>
+
+                    <!-- Top Picks For You -->
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="like.svg" Aspect="AspectFit" 
+                               HeightRequest="20" WidthRequest="20"/>
+                        <Label Text="Top Picks For You!" FontSize="20" 
+                               FontAttributes="Bold"/>
+                    </StackLayout>
+                    <CollectionView x:Name="TopPickCollection" SelectionMode="Single"
+                                    HeightRequest="200"
+                                    ItemsLayout="HorizontalList"
+                                    ItemTemplate="{StaticResource TopPicks}"/>
+
+                    
+                    <!-- Popular Brands -->
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="like.svg" Aspect="AspectFit" 
+                               HeightRequest="20" WidthRequest="20"/>
+                        <Label Text="Popular Brands" FontSize="20" 
+                               FontAttributes="Bold"/>
+                    </StackLayout>
+                    <CollectionView x:Name="BrandCollection1" SelectionMode="Single"
+                                    HeightRequest="320" 
+                                    ItemsLayout="HorizontalList"
+                                    ItemTemplate="{StaticResource Brands}"/>
+                </StackLayout>
+            </ScrollView>
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
