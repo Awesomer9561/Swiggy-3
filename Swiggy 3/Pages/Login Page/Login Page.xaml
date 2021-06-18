@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Swiggy_3.Pages.Login_Page.Loin_Page"
+              x:Name="CarousalLoginPage">
+
+    <CarouselPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="Header">
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="40"/>
+            </Style>
+            <Style TargetType="Label" x:Key="Desc">
+                <Setter Property="FontAttributes" Value="None"/>
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+            <Style TargetType="Label" x:Key="Entry">
+                <Setter Property="FontAttributes" Value="None"/>
+                <Setter Property="FontSize" Value="12"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Orange"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+        </ResourceDictionary>
+    </CarouselPage.Resources>
+
+    
+    <ContentPage>
+        <StackLayout>
+            <Label Text="LOGIN" Style="{StaticResource Header}"/>
+            <Label Text="Enter your phone number to proceed"
+                               Style="{StaticResource Desc}"/>
+            <Label Text="10 digit phone number with coutry code"
+                               Style="{StaticResource Entry}"/>
+            <Entry WidthRequest="400" Keyboard="Numeric"
+                               />
+
+            <Button Text="CONTINUE" Clicked="Verify"/>
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage>
+        <StackLayout>
+            <Label Text="VERIFY DETAILS" 
+                   Style="{StaticResource Header}"/>
+            <Label Text="OTP sent to 700187130"
+                   Style="{StaticResource Desc}"/>
+            <Label Text="Enter OTP"
+                   Style="{StaticResource Entry}"/>
+            <Grid ColumnDefinitions="*,*,*,*,*,*">
+                <Entry MaxLength="1" Keyboard="Numeric" 
+                       Grid.Column="0"/>
+                <Entry MaxLength="1" Keyboard="Numeric" 
+                       Grid.Column="1"/>
+                <Entry MaxLength="1" Keyboard="Numeric" 
+                       Grid.Column="2"/>
+                <Entry MaxLength="1" Keyboard="Numeric" 
+                       Grid.Column="3"/>
+                <Entry MaxLength="1" Keyboard="Numeric" 
+                       Grid.Column="4"/>
+                <Entry MaxLength="1" Keyboard="Numeric" 
+                       Grid.Column="5"/>
+            </Grid>
+
+            <Label HorizontalOptions="End">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="00:30" TextColor="#576574"/>
+                        <Span Text="VERIFY VIA CALL" FontAttributes="Bold" 
+                              FontSize="12" TextColor="#c8d6e5"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Button Text="Verify" Clicked="gotoHomePage"/>
+        </StackLayout> 
+    </ContentPage>
+</CarouselPage>
