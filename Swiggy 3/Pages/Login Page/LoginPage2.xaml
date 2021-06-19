@@ -1,11 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Swiggy_3.Pages.Login_Page.Loin_Page"
-              x:Name="CarousalLoginPage"
-              NavigationPage.HasNavigationBar="False">
+             x:Class="Swiggy_3.Pages.Login_Page.LoginPage2">
 
-    <CarouselPage.Resources>
+    <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Label" x:Key="Header">
                 <Setter Property="FontAttributes" Value="Bold"/>
@@ -31,24 +29,9 @@
                 <Setter Property="Margin" Value="10"/>
             </Style>
         </ResourceDictionary>
-    </CarouselPage.Resources>
-
+    </ContentPage.Resources>
     
-    <ContentPage>
-        <StackLayout>
-            <Label Text="LOGIN" Style="{StaticResource Header}"/>
-            <Label Text="Enter your phone number to proceed"
-                               Style="{StaticResource Desc}"/>
-            <Label Text="10 digit phone number with coutry code"
-                               Style="{StaticResource Entry}"/>
-            <Entry WidthRequest="400" Keyboard="Numeric"
-                               />
-
-            <Button Text="CONTINUE" Clicked="Verify"/>
-        </StackLayout>
-    </ContentPage>
-
-    <ContentPage>
+    <ContentPage.Content>
         <StackLayout>
             <Label Text="VERIFY DETAILS" FontSize="35" 
                    Style="{StaticResource Header}"/>
@@ -81,7 +64,7 @@
             </Grid>
 
             <Button Text="Verify" Clicked="gotoHomePage"/>
-            
-        </StackLayout>     
-    </ContentPage>
-</CarouselPage>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
