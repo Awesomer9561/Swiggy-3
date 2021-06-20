@@ -66,14 +66,10 @@
                                     SelectionChanged="CategorySelected"/>
 
                     <!-- Slider -->
-                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="0,10">
-                        <BoxView Color="#b2bec3" HorizontalOptions="Start"
-                             HeightRequest="7" WidthRequest="80" CornerRadius="10"/>
-                        <BoxView Color="Orange" HorizontalOptions="Start"
-                             HeightRequest="10" WidthRequest="30" CornerRadius="10"
-                             Margin="0,-15,0,0"/>
-                    </StackLayout>
-                    
+                    <Slider WidthRequest="120" HorizontalOptions="Center" Margin="0,10"
+                            ThumbColor="Orange" Maximum="10" MaximumTrackColor="Black"
+                            MinimumTrackColor="#596275"/>
+
                     <!-- Card -->
                     <Frame CornerRadius="30" Margin="10,0"
                            HeightRequest="200" WidthRequest="300"

@@ -8,6 +8,7 @@ using Swiggy_3.Pages.Login_Page;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace Swiggy_3.Pages.SplashScreen
 {
@@ -31,7 +32,19 @@ namespace Swiggy_3.Pages.SplashScreen
             await splashscreen.ScaleTo(1, 200, easing: Easing.BounceOut);
 
             //App.Current.MainPage = new HomePage();
-            App.Current.MainPage = new NavigationPage(new Loin_Page());
+            //App.Current.MainPage = new NavigationPage(new Loin_Page());
+
+            if (Preferences.Get("LoggedIn", false) == true)
+            {
+                App.Current.MainPage = new HomePage();
+            }
+            else
+            {
+                App.Current.MainPage = new NavigationPage(new Loin_Page());
+            }
+
+
+
         }
     }
 }

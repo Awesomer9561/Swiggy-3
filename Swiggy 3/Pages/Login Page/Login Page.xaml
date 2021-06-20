@@ -33,7 +33,7 @@
         </ResourceDictionary>
     </CarouselPage.Resources>
 
-    
+
     <ContentPage x:Name="numberPage">
         <StackLayout>
             <Label Text="LOGIN" Style="{StaticResource Header}"/>
@@ -57,17 +57,29 @@
                    Style="{StaticResource Entry}"/>
             <Grid ColumnDefinitions="*,*,*,*,*,*">
                 <Entry MaxLength="1" Keyboard="Numeric" 
-                       Grid.Column="0"/>
-                <Entry MaxLength="1" Keyboard="Numeric" 
-                       Grid.Column="1"/>
-                <Entry MaxLength="1" Keyboard="Numeric" 
-                       Grid.Column="2"/>
-                <Entry MaxLength="1" Keyboard="Numeric" 
-                       Grid.Column="3"/>
-                <Entry MaxLength="1" Keyboard="Numeric" 
-                       Grid.Column="4"/>
-                <Entry MaxLength="1" Keyboard="Numeric" 
-                       Grid.Column="5"/>
+                       Grid.Column="0" x:Name="entry0" IsPassword="True"
+                       FontAttributes="Bold" FontSize="30"
+                       HorizontalTextAlignment="Center"/>
+                <Entry MaxLength="1" Keyboard="Numeric" IsPassword="True"
+                       FontAttributes="Bold" FontSize="30"
+                       HorizontalTextAlignment="Center"
+                       Grid.Column="1" x:Name="entry1"/>
+                <Entry MaxLength="1" Keyboard="Numeric" IsPassword="True"
+                       FontAttributes="Bold" FontSize="30"
+                       HorizontalTextAlignment="Center"
+                       Grid.Column="2" x:Name="entry2"/>
+                <Entry MaxLength="1" Keyboard="Numeric" IsPassword="True"
+                       FontAttributes="Bold" FontSize="30"
+                       HorizontalTextAlignment="Center"
+                       Grid.Column="3" x:Name="entry3"/>
+                <Entry MaxLength="1" Keyboard="Numeric" IsPassword="True"
+                       FontAttributes="Bold" FontSize="30"
+                       HorizontalTextAlignment="Center"
+                       Grid.Column="4" x:Name="entry4"/>
+                <Entry MaxLength="1" Keyboard="Numeric" IsPassword="True"
+                       FontAttributes="Bold" FontSize="30"
+                       HorizontalTextAlignment="Center"
+                       Grid.Column="5" x:Name="entry5"/>
             </Grid>
 
             <Grid ColumnDefinitions="6*,auto,auto"
@@ -80,7 +92,7 @@
             </Grid>
 
             <Button Text="Verify" Clicked="gotoHomePage"/>
-            
-        </StackLayout>     
+
+        </StackLayout>
     </ContentPage>
 </CarouselPage>

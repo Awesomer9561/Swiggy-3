@@ -19,6 +19,7 @@ namespace Swiggy_3.Pages.ShellPages
             Routing.RegisterRoute("search", typeof(SearchPage));
             Routing.RegisterRoute("cart", typeof(Cart));
             Routing.RegisterRoute("profile", typeof(Profile));
+            Routing.RegisterRoute("loginPage", typeof(Login_Page.Loin_Page));
         }
     }
 }

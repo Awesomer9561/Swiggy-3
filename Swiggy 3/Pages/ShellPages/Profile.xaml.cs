@@ -1,11 +1,12 @@
 ﻿using Swiggy_3.Models;
+using Swiggy_3.Ulities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -64,6 +65,12 @@ namespace Swiggy_3.Pages.ShellPages
                 OptionName = "Help",
                 OptionDesc = "FAQ's and Links"
             });
+        }
+
+        private void logout(object sender, EventArgs e)
+        {
+            AppUtilities.Logout();
+            DisplayAlert("You have been logged out", "Please close the app and restart to login", "Ok");
         }
     }
 }
