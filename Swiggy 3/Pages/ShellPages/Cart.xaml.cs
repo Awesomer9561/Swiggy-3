@@ -16,5 +16,10 @@ namespace Swiggy_3.Pages.ShellPages
         {
             InitializeComponent();
         }
+
+        private void gotoSwiggyPage(object sender, EventArgs e)
+        {
+            //Shell.Current.GoToAsync("swiggy");
+        }
     }
 }

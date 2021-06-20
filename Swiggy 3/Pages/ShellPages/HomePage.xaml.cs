@@ -15,6 +15,10 @@ namespace Swiggy_3.Pages.ShellPages
         public HomePage()
         {
             InitializeComponent();
+            Routing.RegisterRoute("swiggy", typeof(Swiggy));
+            Routing.RegisterRoute("search", typeof(SearchPage));
+            Routing.RegisterRoute("cart", typeof(Cart));
+            Routing.RegisterRoute("profile", typeof(Profile));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Swiggy_3.Pages.ShellPages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,13 +20,12 @@ namespace Swiggy_3.Pages.Login_Page
 
         private void Verify(object sender, EventArgs e)
         {
-
+            CarousalLoginPage.CurrentPage = verify;
         }
 
         private void gotoHomePage(object sender, EventArgs e)
         {
-
+            App.Current.MainPage = new HomePage();
         }
-
     }
 }

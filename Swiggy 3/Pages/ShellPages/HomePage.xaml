@@ -23,19 +23,19 @@
     </Shell.Resources>
 
     <TabBar>
-        <Tab Title="Swiggy" Icon="swiggyLogo.png">
+        <Tab Title="Swiggy" Icon="swiggyLogo.png" Route="swiggy">
             <!--<ShellContent ContentTemplate="{DataTemplate shell:Swiggy}"/>-->
             <shell:Swiggy/>
         </Tab>
-        <Tab  Title="Search" Icon="search.png">
+        <Tab  Title="Search" Icon="search.png" Route="search">
             <!--<ShellContent ContentTemplate="{DataTemplate shell:SearchPage}"/>-->
             <shell:SearchPage/>
         </Tab>
-        <Tab  Title="Cart" Icon="cart.png">
+        <Tab  Title="Cart" Icon="cart.png" Route="cart">
             <!--<ShellContent ContentTemplate="{DataTemplate shell:Cart}"/>-->
             <shell:Cart/>
         </Tab>
-        <Tab Title="Profile" Icon="account.png">
+        <Tab Title="Profile" Icon="account.png" Route="profile">
             <shell:Profile/>
             <!--<ShellContent ContentTemplate="{DataTemplate shell:Profile}"/>-->
         </Tab>

@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Image x:Name="splashscreen" Source="SwiggyLogo.png" Aspect="AspectFit" 
-                   HeightRequest="50" HorizontalOptions="CenterAndExpand" 
+                   HeightRequest="1" HorizontalOptions="CenterAndExpand" 
                    VerticalOptions="CenterAndExpand" BackgroundColor="White"/>
         </StackLayout>
     </ContentPage.Content>

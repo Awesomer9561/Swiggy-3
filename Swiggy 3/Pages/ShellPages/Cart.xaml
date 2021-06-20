@@ -3,10 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Swiggy_3.Pages.ShellPages.Cart">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="#fcf7d7">
+            <Image Source="foodCooking.jpg" Aspect="AspectFit" 
+                   HeightRequest="300" VerticalOptions="Center"
+                   Margin="0, 100, 0, 0"/>
+
+            <Label Text="GOOD FOOD IS  ALWAYS COOKING" FontSize="20"
+                   FontAttributes="Bold" HorizontalTextAlignment="Center"
+                   Margin="-10, 0, 0, 0"/>
+            
+            
+            <Label Text="Your cart is empty." FontSize="17"
+                   FontAttributes="None" Opacity="0.6"
+                   HorizontalTextAlignment="Center" Margin="0,15,0,0"/>
+            <Label Text="Add something from the menu" FontSize="17"
+                   FontAttributes="None" Opacity="0.6"
+                   HorizontalTextAlignment="Center" Margin="0,-5,0,0"/>
+
+
+            <Frame BackgroundColor="Transparent" BorderColor="Orange"
+                   Margin="15,20" HeightRequest="50" Padding="0" 
+                   HasShadow="False">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="gotoSwiggyPage"/>
+                </Frame.GestureRecognizers>
+                <Label Text="BROWSE RESTAURANTS" FontSize="20"
+                   FontAttributes="Bold" HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" TextColor="Orange"/>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

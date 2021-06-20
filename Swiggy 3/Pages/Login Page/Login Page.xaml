@@ -34,21 +34,20 @@
     </CarouselPage.Resources>
 
     
-    <ContentPage>
+    <ContentPage x:Name="numberPage">
         <StackLayout>
             <Label Text="LOGIN" Style="{StaticResource Header}"/>
             <Label Text="Enter your phone number to proceed"
                                Style="{StaticResource Desc}"/>
             <Label Text="10 digit phone number with coutry code"
                                Style="{StaticResource Entry}"/>
-            <Entry WidthRequest="400" Keyboard="Numeric"
-                               />
+            <Entry WidthRequest="400" Keyboard="Numeric" />
 
             <Button Text="CONTINUE" Clicked="Verify"/>
         </StackLayout>
     </ContentPage>
 
-    <ContentPage>
+    <ContentPage x:Name="verify">
         <StackLayout>
             <Label Text="VERIFY DETAILS" FontSize="35" 
                    Style="{StaticResource Header}"/>

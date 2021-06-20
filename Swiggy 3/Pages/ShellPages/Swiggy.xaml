@@ -39,11 +39,9 @@
                              
             </Grid>
             
-            <!-- Separator -->
-            <BoxView BackgroundColor="#8395a7" HeightRequest="0.5" 
-                     WidthRequest="400" HorizontalOptions="Fill" Margin="0,-5, 0, 10">
-            </BoxView>
-            
+            <!-- Line -->
+            <BoxView Style="{StaticResource Line}"/>
+
             <!--Scroll Veiw-->
             <ScrollView VerticalScrollBarVisibility="Never">
                 <StackLayout>
@@ -63,7 +61,7 @@
                     </StackLayout>
                     <!-- Categories -->
                     <CollectionView x:Name="CategoryColumn" HeightRequest="180"
-                                    SelectionMode="Single" ItemsLayout="HorizontalList" 
+                                    ItemsLayout="HorizontalList" 
                                     ItemTemplate="{StaticResource CollectionViewSingle}"
                                     SelectionChanged="CategorySelected"/>
 
@@ -98,32 +96,28 @@
                     </CarouselView>
 
                     <!-- Separator -->
-                    <BoxView BackgroundColor="#8395a7" HeightRequest="1" 
-                     WidthRequest="400" Margin="0,-5, 0, 10">
-                    </BoxView>
+                    <BoxView Style="{StaticResource Separator}"/>
 
                     <!-- Top Picks For You -->
                     <StackLayout Orientation="Horizontal">
-                        <Image Source="like.svg" Aspect="AspectFit" 
+                        <Image Source="like.png" Aspect="AspectFit" 
                                HeightRequest="20" WidthRequest="20"/>
                         <Label Text="Top Picks For You!" FontSize="20" 
                                FontAttributes="Bold"/>
                     </StackLayout>
-                    <CollectionView x:Name="TopPickCollection" SelectionMode="Single"
-                                    HeightRequest="200"
+                    <CollectionView x:Name="TopPickCollection" HeightRequest="200"
                                     ItemsLayout="HorizontalList"
                                     ItemTemplate="{StaticResource TopPicks}"/>
 
                     
                     <!-- Popular Brands -->
                     <StackLayout Orientation="Horizontal">
-                        <Image Source="like.svg" Aspect="AspectFit" 
+                        <Image Source="like2.png" Aspect="AspectFit" 
                                HeightRequest="20" WidthRequest="20"/>
                         <Label Text="Popular Brands" FontSize="20" 
                                FontAttributes="Bold"/>
                     </StackLayout>
-                    <CollectionView x:Name="BrandCollection1" SelectionMode="Single"
-                                    HeightRequest="320" 
+                    <CollectionView x:Name="BrandCollection1" HeightRequest="320" 
                                     ItemsLayout="HorizontalList"
                                     ItemTemplate="{StaticResource Brands}"/>
                 </StackLayout>

@@ -13,8 +13,8 @@ namespace Swiggy_3
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Loin_Page());
-            //MainPage = new HomePage();
+            //MainPage = new NavigationPage(new Loin_Page());
+            MainPage = new HomePage();
             //App.Current.MainPage = new NavigationPage(new SplashScreen());
         }
 
