@@ -1,123 +1,108 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Swiggy_3.App">
+             x:Class="Swiggy_3.App"
+             >
     <Application.Resources>
-       
-        <!-- Separator -->
-        <Style TargetType="BoxView" x:Key="Separator">
-            <Setter Property="BackgroundColor" Value="#b2bec3"/>
-            <Setter Property="HeightRequest" Value="6"/>
-            <Setter Property="HorizontalOptions" Value="Fill"/>
-            <Setter Property="Margin" Value="0,-5, 0, 10"/>
-            <Setter Property="Opacity" Value="0.3"/>
-        </Style>
-        <!-- Line -->
-        <Style TargetType="BoxView" x:Key="Line">
-            <Setter Property="BackgroundColor" Value="#b2bec3"/>
-            <Setter Property="HeightRequest" Value="0.5"/>
-            <Setter Property="HorizontalOptions" Value="Fill"/>
-        </Style>
-        
-        
-        
-        <DataTemplate x:Key="CollectionViewSingle">
-            <StackLayout>
-                <Frame BackgroundColor="AntiqueWhite" BorderColor="Brown" 
-                   Margin="10" Padding="0" CornerRadius="15">
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="{Binding CategoryName}" FontSize="20"
-                       HorizontalOptions="Center" FontAttributes="Bold"/>
-                        <Image Source="{Binding CategoryImage}" HeightRequest="130" 
-                       Aspect="AspectFill" WidthRequest="100"
-                       HorizontalOptions="Center" Margin="0, -10"/>
-                    </StackLayout>
-                </Frame>
-                <Label Text="{Binding Description}" FontSize="15"
-                       HorizontalOptions="Center" Margin="0,-10"/>
-            </StackLayout>
-        </DataTemplate>
-        
-        
-        <!--Top picks collection view -->
-        <DataTemplate x:Key="TopPicks">
-            <StackLayout>
-                <Frame HeightRequest="80" WidthRequest="80"
-                       Margin="10" Padding="0" CornerRadius="5"
-                       HasShadow="True">
-                    <Image Source="{Binding foodImage}" Aspect="AspectFill"
-                           HorizontalOptions="Center"/>
-                </Frame>
-                <!--Second Frame -->
-                <Frame HeightRequest="20" WidthRequest="60" BackgroundColor="White"
-                       Margin="10,-25,10,0" Padding="0" CornerRadius="5"
-                       HorizontalOptions="Center"
-                       HasShadow="True" BorderColor="White">
-                    <Label Text="10% OFF" VerticalOptions="Center" FontAttributes="Bold"
-                           HorizontalOptions="Center" TextColor="Orange"/>
-                </Frame>
+        <ResourceDictionary>
 
-                <StackLayout Orientation="Vertical" Margin="12, 0">
-                    <Label Text="{Binding foodName}" FontSize="15" 
-                           HorizontalOptions="Start" FontAttributes="Bold"/>
-                    <Label Text="{Binding Time}" FontSize="11" 
-                           HorizontalOptions="Start" Margin="0, -5, 0, 0"/>
-                </StackLayout>
-            </StackLayout>
-        </DataTemplate>
-        
-        
-        <!-- Popular Brands -->
-        <DataTemplate x:Key="Brands">
-            <StackLayout>
-                <!--1st Row -->
-                <Frame HeightRequest="100" WidthRequest="100" HasShadow="False"
-                       CornerRadius="60" BackgroundColor="White" Padding="0"
-                       Margin="10">
-                    <Image Source="{Binding brandImage}" Aspect="AspectFill"
-                           />
-                </Frame>
-                <!-- Second frame-->
-                <Frame HeightRequest="25" WidthRequest="80" BackgroundColor="White"
-                       Margin="10,-34,10,0" Padding="0" CornerRadius="5"
-                       HorizontalOptions="Center"
-                       HasShadow="True" BorderColor="#dfe6e9">
-                    <Label Text="10% OFF" VerticalOptions="Center" 
-                           FontSize="15" FontAttributes="Bold"
-                           HorizontalOptions="Center" TextColor="Orange"/>
-                </Frame>
-                <StackLayout Orientation="Vertical" Margin="20, 0">
-                    <Label Text="{Binding brandName}" FontSize="15" 
-                           HorizontalOptions="Start" FontAttributes="Bold"/>
-                    <Label Text="{Binding Time}" FontSize="11" 
-                           HorizontalOptions="Start" Margin="0, -5, 0, 0"/>
-                </StackLayout>
+            <!-- Icons -->
+            <Style TargetType="Image" x:Key="iconsImg">
+                <Setter Property="HeightRequest" Value="20"/>
+                <Setter Property="Aspect" Value="AspectFit"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+
+            <!-- Fonts -->
+            <Style TargetType="Label" x:Key="headerFont">
+                <Setter Property="Opacity" Value="0.8"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="17"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+
+            <!-- Separator -->
+            <Style TargetType="BoxView" x:Key="Separator">
+                <Setter Property="BackgroundColor" Value="#b2bec3"/>
+                <Setter Property="HeightRequest" Value="6"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+                <Setter Property="Margin" Value="0,-5, 0, 10"/>
+                <Setter Property="Opacity" Value="0.3"/>
+            </Style>
+
+            <!-- Line -->
+            <Style TargetType="BoxView" x:Key="Line">
+                <Setter Property="BackgroundColor" Value="#b2bec3"/>
+                <Setter Property="HeightRequest" Value="0.5"/>
+                <Setter Property="HorizontalOptions" Value="Fill"/>
+            </Style>
+
+
+
+            <DataTemplate x:Key="CollectionViewSingle">
                 
-                <!-- 2nd Row -->
+            </DataTemplate>
 
-                <Frame HeightRequest="100" WidthRequest="100" HasShadow="False"
-                       CornerRadius="60" BackgroundColor="White" Padding="0"
-                       Margin="10">
-                    <Image Source="{Binding brandImage}" Aspect="AspectFill"
-                           />
-                </Frame>
-                <!-- Second frame-->
-                <Frame HeightRequest="25" WidthRequest="80" BackgroundColor="White"
-                       Margin="10,-34,10,0" Padding="0" CornerRadius="5"
-                       HorizontalOptions="Center"
-                       HasShadow="True" BorderColor="#dfe6e9">
-                    <Label Text="10% OFF" VerticalOptions="Center" 
-                           FontSize="15" FontAttributes="Bold"
-                           HorizontalOptions="Center" TextColor="Orange"/>
-                </Frame>
-                <StackLayout Orientation="Vertical" Margin="20, 0">
-                    <Label Text="{Binding brandName}" FontSize="15" 
-                           HorizontalOptions="Start" FontAttributes="Bold"/>
-                    <Label Text="{Binding Time}" FontSize="11" 
-                           HorizontalOptions="Start" Margin="0, -5, 0, 0"/>
+
+            <!-- Popular Brands -->
+            <DataTemplate x:Key="Brands">
+                <StackLayout>
+                    <!--1st Row -->
+                    <StackLayout>
+                        <!-- brand logo -->
+                        <Frame HeightRequest="80" WidthRequest="80" BackgroundColor="White"
+                               BorderColor="#dfe6e9" Padding="0" CornerRadius="80" 
+                               HasShadow="False" Margin="10">
+                            <Frame HeightRequest="60" WidthRequest="60" BackgroundColor="White"
+                                   Padding="0" Margin="8" CornerRadius="60" HasShadow="False">
+                                <Image Source="{Binding brandImage}" Aspect="AspectFit"/>
+                            </Frame>
+                        </Frame>
+                        <!-- Offer tag -->
+                        <Frame HeightRequest="25" WidthRequest="60" BackgroundColor="White"
+                               Margin="10,-30,10,0" Padding="0" CornerRadius="5"
+                               HorizontalOptions="Center"
+                               HasShadow="True" BorderColor="White">
+                            <Label Text="10% OFF" VerticalOptions="Center" FontAttributes="Bold"
+                                   FontSize="14" HorizontalOptions="Center" TextColor="#ff7675"/>
+                        </Frame>
+                        <!--brand desc -->
+                        <Label Text="{Binding brandName}" Style="{StaticResource headerFont}" 
+                               FontSize="15" HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                               Margin="0,-5,0,-2"/>
+                        <Label Text="{Binding Time}" FontSize="11" HorizontalOptions="Center"/>
+                    </StackLayout>
+
+                    <!-- 2nd Row -->
+                    <StackLayout>
+                        <!-- brand logo -->
+                        <Frame HeightRequest="80" WidthRequest="80" BackgroundColor="White"
+                               BorderColor="#dfe6e9" Padding="0" CornerRadius="80" 
+                               HasShadow="False" Margin="10">
+                            <Frame HeightRequest="60" WidthRequest="60" BackgroundColor="White"
+                                   Padding="0" Margin="8" CornerRadius="60" HasShadow="False">
+                                <Image Source="{Binding brandImage}" Aspect="AspectFit"/>
+                            </Frame>
+                        </Frame>
+                        <!-- Offer tag -->
+                        <Frame HeightRequest="25" WidthRequest="60" BackgroundColor="White"
+                               Margin="10,-30,10,0" Padding="0" CornerRadius="5"
+                               HorizontalOptions="Center"
+                               HasShadow="True" BorderColor="White">
+                            <Label Text="10% OFF" VerticalOptions="Center" FontAttributes="Bold"
+                                   FontSize="14" HorizontalOptions="Center" TextColor="#ff7675"/>
+                        </Frame>
+                        <!--brand desc -->
+                        <Label Text="{Binding brandName}" Style="{StaticResource headerFont}" 
+                               FontSize="15" HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                               Margin="0,-5,0,-2"/>
+                        <Label Text="{Binding Time}" FontSize="11" HorizontalOptions="Center"/>
+                    </StackLayout>
+
                 </StackLayout>
-
-            </StackLayout>
-        </DataTemplate>
+            </DataTemplate>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

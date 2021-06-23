@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Swiggy_3.Pages.Model_Pages.BrandsItemTemplate">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame HeightRequest="100" WidthRequest="100" HasShadow="False"
+                       CornerRadius="60" BackgroundColor="White" Padding="0"
+                       Margin="10">
+                <Image Source="{Binding brandImage}" Aspect="AspectFill"
+                           />
+            </Frame>
+            <!-- Second frame-->
+            <Frame HeightRequest="25" WidthRequest="80" BackgroundColor="White"
+                       Margin="10,-34,10,0" Padding="0" CornerRadius="5"
+                       HorizontalOptions="Center"
+                       HasShadow="True" BorderColor="#dfe6e9">
+                <Label Text="10% OFF" VerticalOptions="Center" 
+                           FontSize="15" FontAttributes="Bold"
+                           HorizontalOptions="Center" TextColor="Orange"/>
+            </Frame>
+            <StackLayout Orientation="Vertical" Margin="20, 0">
+                <Label Text="{Binding brandName}" FontSize="15" 
+                           HorizontalOptions="Start" FontAttributes="Bold"/>
+                <Label Text="{Binding Time}" FontSize="11" 
+                           HorizontalOptions="Start" Margin="0, -5, 0, 0"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

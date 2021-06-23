@@ -5,6 +5,10 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
+
+
+
 namespace Swiggy_3
 {
     public partial class App : Application
@@ -14,8 +18,8 @@ namespace Swiggy_3
             InitializeComponent();
 
             //MainPage = new NavigationPage(new Loin_Page());
-            //MainPage = new HomePage();
-            App.Current.MainPage = new NavigationPage(new SplashScreen());
+            MainPage = new HomePage();
+            //App.Current.MainPage = new NavigationPage(new SplashScreen());
         }
 
         protected override void OnStart()
