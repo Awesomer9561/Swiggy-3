@@ -23,6 +23,7 @@
     </Shell.Resources>
 
     <TabBar>
+        
         <Tab Title="Swiggy" Icon="swiggyLogo.png" Route="swiggy">
             <!--<ShellContent ContentTemplate="{DataTemplate shell:Swiggy}"/>-->
             <shell:Swiggy/>

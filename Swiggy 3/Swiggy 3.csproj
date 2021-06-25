@@ -15,6 +15,12 @@
     <None Remove="Fonts\JosefinSans-Regular.ttf" />
     <None Remove="Fonts\JosefinSans-SemiBold.ttf" />
     <None Remove="Fonts\JosefinSans-Thin.ttf" />
+    <None Remove="Fonts\Montserrat-Black.ttf" />
+    <None Remove="Fonts\Montserrat-Bold.ttf" />
+    <None Remove="Fonts\Montserrat-Light.ttf" />
+    <None Remove="Fonts\Montserrat-Medium.ttf" />
+    <None Remove="Fonts\Montserrat-Regular.ttf" />
+    <None Remove="Fonts\Montserrat-SemiBold.ttf" />
     <None Remove="Fonts\Poppins-Black.otf" />
     <None Remove="Fonts\Poppins-Bold.otf" />
     <None Remove="Fonts\Poppins-Medium.otf" />
@@ -33,6 +39,9 @@
     <EmbeddedResource Include="Fonts\JosefinSans-Regular.ttf" />
     <EmbeddedResource Include="Fonts\JosefinSans-SemiBold.ttf" />
     <EmbeddedResource Include="Fonts\JosefinSans-Thin.ttf" />
+    <EmbeddedResource Include="Fonts\Montserrat-Light.ttf" />
+    <EmbeddedResource Include="Fonts\Montserrat-Medium.ttf" />
+    <Page Include="Fonts\Montserrat-Regular.ttf" />
     <EmbeddedResource Include="Fonts\Poppins-Black.otf" />
     <EmbeddedResource Include="Fonts\Poppins-Bold.otf" />
     <EmbeddedResource Include="Fonts\Poppins-Medium.otf" />
@@ -49,6 +58,12 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Montserrat-Black.ttf" />
+    <Resource Include="Fonts\Montserrat-Bold.ttf" />
+    <Resource Include="Fonts\Montserrat-SemiBold.ttf" />
   </ItemGroup>
 
   <ItemGroup>

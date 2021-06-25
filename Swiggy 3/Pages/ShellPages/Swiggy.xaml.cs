@@ -14,19 +14,83 @@ namespace Swiggy_3.Pages.ShellPages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Swiggy : ContentPage
     {
-        ObservableCollection<Models.CategoriesCollection> categories { get; set; }
+        ObservableCollection<CategoriesCollection> categories { get; set; }
         ObservableCollection<Brands> brands1 { get; set; }
+        ObservableCollection<popularCuration> curations { get; set; }
         ObservableCollection<string> lstOfoffferCarosalData { get; set; }
+        ObservableCollection<string> featuredOffers { get; set; }
         ObservableCollection<TopPicks> topPicksImage { get; set; }
+
+        string time = "mins";
         public Swiggy()
         {
             InitializeComponent();
             setCategoryData();
             //SetOfferCarosaleData();
             setBrandInfo1();
+            setFeaturedOffers();
             setTopPickImage();
+            setCurationData();
         }
-        string time = "mins";
+
+        private void setFeaturedOffers()
+        {
+            featuredOffers = new ObservableCollection<string>();
+            featuredOffers.Add("offer1.jpg");
+            featuredOffers.Add("offer2.jpg");
+            featuredOffers.Add("offer3.jpg");
+            featuredOffers.Add("offer4.jpg");
+            featuredOffers.Add("offer5.png");
+            featuredOffers.Add("offer1.jpg");
+            featuredOffers.Add("offer2.jpg");
+            featuredOffers.Add("offer3.jpg");
+            featuredOffers.Add("offer4.jpg");
+            featuredOffers.Add("offer5.png");
+            featuredOfferCarousalView.ItemsSource = featuredOffers;
+        }
+
+        private void setCurationData()
+        {
+            curations = new ObservableCollection<popularCuration>();
+            curations.Add(new popularCuration
+            {
+                foodImage = "foodBiryani.png",
+                foodName = "Biryani"
+            });
+            curations.Add(new popularCuration
+            {
+                foodImage = "foodChinese.png",
+                foodName = "Chinese"
+            });
+            curations.Add(new popularCuration
+            {
+                foodImage = "foodPizza.png",
+                foodName = "Pizza"
+            });
+            curations.Add(new popularCuration
+            {
+                foodImage = "foodVegBirani.png",
+                foodName = "Veg Biryani"
+            });
+            curations.Add(new popularCuration
+            {
+                foodImage = "foodBiryani.png",
+                foodName = "Biryani"
+            });
+            curations.Add(new popularCuration
+            {
+                foodImage = "foodChinese.png",
+                foodName = "Chinese"
+            });
+            curations.Add(new popularCuration
+            {
+                foodImage = "foodPizza.png",
+                foodName = "Pizza"
+            });
+
+            popularCurations.ItemsSource = curations;
+        }
+
         private void setBrandInfo1()
         {
             brands1 = new ObservableCollection<Brands>();
@@ -158,6 +222,7 @@ namespace Swiggy_3.Pages.ShellPages
             });
             
             TopPickCollection.ItemsSource = topPicksImage;
+            somethingNewCollectionView.ItemsSource = topPicksImage;
         }
 
         /*private void SetOfferCarosaleData()
@@ -262,6 +327,11 @@ namespace Swiggy_3.Pages.ShellPages
         }
 
         private void CategorySelected(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void instamart(object sender, EventArgs e)
         {
 
         }

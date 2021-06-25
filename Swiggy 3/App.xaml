@@ -19,7 +19,8 @@
                 <Setter Property="Opacity" Value="0.8"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="FontSize" Value="17"/>
+                <Setter Property="FontSize" Value="23"/>
+                <Setter Property="FontFamily" Value="RBold"/>
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
             </Style>
 
@@ -40,69 +41,7 @@
             </Style>
 
 
-
-            <DataTemplate x:Key="CollectionViewSingle">
-                
-            </DataTemplate>
-
-
-            <!-- Popular Brands -->
-            <DataTemplate x:Key="Brands">
-                <StackLayout>
-                    <!--1st Row -->
-                    <StackLayout>
-                        <!-- brand logo -->
-                        <Frame HeightRequest="80" WidthRequest="80" BackgroundColor="White"
-                               BorderColor="#dfe6e9" Padding="0" CornerRadius="80" 
-                               HasShadow="False" Margin="10">
-                            <Frame HeightRequest="60" WidthRequest="60" BackgroundColor="White"
-                                   Padding="0" Margin="8" CornerRadius="60" HasShadow="False">
-                                <Image Source="{Binding brandImage}" Aspect="AspectFit"/>
-                            </Frame>
-                        </Frame>
-                        <!-- Offer tag -->
-                        <Frame HeightRequest="25" WidthRequest="60" BackgroundColor="White"
-                               Margin="10,-30,10,0" Padding="0" CornerRadius="5"
-                               HorizontalOptions="Center"
-                               HasShadow="True" BorderColor="White">
-                            <Label Text="10% OFF" VerticalOptions="Center" FontAttributes="Bold"
-                                   FontSize="14" HorizontalOptions="Center" TextColor="#ff7675"/>
-                        </Frame>
-                        <!--brand desc -->
-                        <Label Text="{Binding brandName}" Style="{StaticResource headerFont}" 
-                               FontSize="15" HorizontalOptions="Center" HorizontalTextAlignment="Center"
-                               Margin="0,-5,0,-2"/>
-                        <Label Text="{Binding Time}" FontSize="11" HorizontalOptions="Center"/>
-                    </StackLayout>
-
-                    <!-- 2nd Row -->
-                    <StackLayout>
-                        <!-- brand logo -->
-                        <Frame HeightRequest="80" WidthRequest="80" BackgroundColor="White"
-                               BorderColor="#dfe6e9" Padding="0" CornerRadius="80" 
-                               HasShadow="False" Margin="10">
-                            <Frame HeightRequest="60" WidthRequest="60" BackgroundColor="White"
-                                   Padding="0" Margin="8" CornerRadius="60" HasShadow="False">
-                                <Image Source="{Binding brandImage}" Aspect="AspectFit"/>
-                            </Frame>
-                        </Frame>
-                        <!-- Offer tag -->
-                        <Frame HeightRequest="25" WidthRequest="60" BackgroundColor="White"
-                               Margin="10,-30,10,0" Padding="0" CornerRadius="5"
-                               HorizontalOptions="Center"
-                               HasShadow="True" BorderColor="White">
-                            <Label Text="10% OFF" VerticalOptions="Center" FontAttributes="Bold"
-                                   FontSize="14" HorizontalOptions="Center" TextColor="#ff7675"/>
-                        </Frame>
-                        <!--brand desc -->
-                        <Label Text="{Binding brandName}" Style="{StaticResource headerFont}" 
-                               FontSize="15" HorizontalOptions="Center" HorizontalTextAlignment="Center"
-                               Margin="0,-5,0,-2"/>
-                        <Label Text="{Binding Time}" FontSize="11" HorizontalOptions="Center"/>
-                    </StackLayout>
-
-                </StackLayout>
-            </DataTemplate>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

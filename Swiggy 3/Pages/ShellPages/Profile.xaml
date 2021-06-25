@@ -3,13 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Swiggy_3.Pages.ShellPages.Profile">
     <ContentPage.Resources>
-        <Style TargetType="BoxView" x:Key="NormalLine">
-            <Setter Property="HeightRequest" Value="1"/>
-            <Setter Property="WidthRequest" Value="400"/>
-            <Setter Property="BackgroundColor" Value="#222f3e"/>
-            <Setter Property="Opacity" Value=".6"/>
-            <Setter Property="HorizontalOptions" Value="Center"/>
-        </Style>
 
         <Style TargetType="StackLayout" x:Key="NormalOption">
             <Setter Property="Margin" Value="0,10"/>
@@ -29,150 +22,218 @@
             <Setter Property="HorizontalTextAlignment" Value="Start"/>
         </Style>
 
-        <DataTemplate x:Key="PastOrders">
-            <StackLayout >
-                <!-- Store Name and Status -->
-                <Grid Grid.Row="0" Margin="0,4" RowDefinitions="20,20,20" ColumnDefinitions="7*,3*">
-                    <Label Text="{Binding Store}" FontSize="18" Grid.Row="0" Grid.Column="0"/>
-                    <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1"
-                                 HorizontalOptions="End">
-                        <Label Text="Delivered"/>
-                        <Image Source="checked.png" Aspect="AspectFit" HeightRequest="20"/>
-                    </StackLayout>
-                    <Label Text="Location" Grid.Row="1" Grid.ColumnSpan="2" 
-                           FontSize="15" Margin="0,-5"/>
 
-                    <StackLayout Orientation="Horizontal" Margin="0,-10" 
-                                 Grid.Row="2" Grid.ColumnSpan="2">
-                        <Label Text="Amount" FontSize="13" VerticalOptions="Center"/>
-                        <Image Source="arrow.png" Aspect="AspectFit" 
-                               VerticalOptions="Center"
-                               HeightRequest="10" Opacity="0.5"/>
-                    </StackLayout>
-                </Grid>
-
-                <!-- Separator -->
-                <Line BackgroundColor="Black" WidthRequest="500"
-                      Margin="20,0" StrokeDashArray="10,10"/>
-                
-                <!-- Order Summary -->
-                <Label Text="Dish Name" FontSize="14"/>
-                <Label Text="Date Time Of Order" FontSize="11" Margin="0,4"/>
-            </StackLayout>
-        </DataTemplate>
 
     </ContentPage.Resources>
 
 
     <ContentPage.Content>
-        <StackLayout>
-            <!-- Header -->
-            <Grid RowDefinitions="*,*" ColumnDefinitions="7*,3*" Margin="10,20,10,0">
-                <Label Text="PARVEZ ALI" FontSize="27" Grid.Row="0" Grid.Column="0"
-                       FontAttributes="Bold" HorizontalTextAlignment="Start"/>
-                
-                <Label Text="EDIT" TextColor="Orange" FontSize="20" 
-                       Grid.Row="0" Grid.Column="1" FontAttributes="Bold"
+        <ScrollView>
+            <StackLayout>
+                <!-- Header -->
+                <Grid RowDefinitions="30,20" ColumnDefinitions="7*,3*" Margin="10,20,10,0">
+                    <Label Text="PARVEZ ALI" FontSize="25"
+                       Grid.Row="0" Grid.Column="0" TextColor="Black" Opacity="0.9"
+                       FontFamily="PSemiBold" HorizontalTextAlignment="Start"/>
+
+                    <Label Text="EDIT" TextColor="Orange" FontSize="17" 
+                       Grid.Row="0" Grid.Column="1" FontFamily="RBold"
                        VerticalOptions="Center" HorizontalOptions="End"/>
 
-                <Label Text="Logout" TextColor="Orange" FontSize="20" 
-                       Grid.Row="1" Grid.Column="1" FontAttributes="Bold"
-                       VerticalOptions="Center" HorizontalOptions="End">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer  Tapped ="logout"/>
-                    </Label.GestureRecognizers>
-                </Label>
+                    <Label Text="7001871130  .  pa7407071463@gmail.com" FontSize="14" 
+                       HorizontalTextAlignment="Start" TextColor="Black" Opacity="0.7"
+                       Grid.Row="1" Grid.Column="0" FontFamily="RMed"/>
+                </Grid>
+                <Line X1="0" X2="400" Y1="0" Y2="0" Margin="10,0" 
+                  StrokeThickness="3" Stroke="black" StrokeLineCap="Round"/>
+
+
+                <!-- Porfile Options -->
+                <Grid RowDefinitions="70,auto,70,auto,70,auto,70,auto">
+                    <!-- My Account -->
+                    <Grid RowDefinitions="auto,auto" ColumnDefinitions="9*,*" VerticalOptions="Center"
+                  Grid.Row="0" Margin="10,0" >
+                        <Label Text="My Account" TextColor="Black" Grid.Row="0" Grid.Column="0"
+                       FontSize="18" FontFamily="MMed"/>
+                        <Image Source="arrow.png" HeightRequest="15" 
+                       Grid.Row="0" Grid.Column="1"
+                       Rotation="90" VerticalOptions="Start"/>
+                        <Label Text="Addresses, Favourites &amp; Others" Grid.Row="1" Grid.Column="0" 
+                           FontSize="15" FontFamily="JFReg"/>
+                    </Grid>
+                    <Line X1="0" X2="400" Y1="0" Y2="0" StrokeThickness="1" Grid.Row="1"
+                      Margin="10,0" Stroke="black" />
+
+                    <!-- Payments & Refunds -->
+                    <Grid RowDefinitions="auto,auto" ColumnDefinitions="9*,*" VerticalOptions="Center"
+                  Grid.Row="2" Margin="10,0" >
+                        <Label Text="Payments &amp; Refunds" TextColor="Black" Grid.Row="0" Grid.Column="0"
+                       FontSize="18" FontFamily="MMed"/>
+                        <Image Source="arrow.png" HeightRequest="15" 
+                       Grid.Row="0" Grid.Column="1"
+                       Rotation="90" VerticalOptions="Start"/>
+                        <Label Text="Refund Status &amp; Payment Modes" Grid.Row="1" Grid.Column="0" 
+                           FontSize="15" FontFamily="JFReg"/>
+                    </Grid>
+                    <Line X1="0" X2="400" Y1="0" Y2="0" StrokeThickness="1" 
+                      Grid.Row="3"
+                      Margin="10,0" Stroke="black" />
+
+                    <!-- Swiggy Money -->
+                    <Grid RowDefinitions="auto,auto" ColumnDefinitions="9*,*" VerticalOptions="Center"
+                  Grid.Row="4" Margin="10,0" >
+                        <Label Text="Swiggy Money" TextColor="Black" Grid.Row="0" Grid.Column="0"
+                       FontSize="18" FontFamily="MMed"/>
+                        <Image Source="arrow.png" HeightRequest="15" 
+                       Grid.Row="0" Grid.Column="1"
+                       VerticalOptions="Start"/>
+                        <Label Text="Veiw Account Balance &amp; Transation History" Grid.Row="1" Grid.Column="0" 
+                           FontSize="15" FontFamily="JFReg"/>
+                    </Grid>
+                    <Line X1="0" X2="400" Y1="0" Y2="0" StrokeThickness="1" 
+                      Grid.Row="5"
+                      Margin="10,0" Stroke="black" />
+
+                    <!-- Help -->
+                    <Grid RowDefinitions="auto,auto" ColumnDefinitions="9*,*" VerticalOptions="Center"
+                  Grid.Row="6" Margin="10,0" >
+                        <Label Text="Help" TextColor="Black" Grid.Row="0" Grid.Column="0"
+                       FontSize="18" FontFamily="MMed"/>
+                        <Image Source="arrow.png" HeightRequest="15" 
+                       Grid.Row="0" Grid.Column="1"
+                       VerticalOptions="Start"/>
+                        <Label Text="FAQ's &amp; Links" Grid.Row="1" Grid.Column="0" 
+                           FontSize="15" FontFamily="JFReg"/>
+                    </Grid>
+                    <Line X1="0" X2="400" Y1="0" Y2="0" StrokeThickness="1" 
+                      Grid.Row="7"
+                      Margin="0,0" Stroke="black" />
+                </Grid>
+
                 
-                <Label Text="7001871130  .  pa7407071463@gmail.com" FontSize="12" 
-                       HorizontalTextAlignment="Start" Margin="0,2" 
-                       Grid.Row="1" Grid.Column="0"/>
-            </Grid>
-            <BoxView HorizontalOptions="Center" WidthRequest="500" 
-                     HeightRequest="2" BackgroundColor="#222f3e"
-                     Opacity=".8" Margin="10,5,10,0"/>
+                <!-- Past Orders -->
+                <Frame BackgroundColor="#dfe6e9" Opacity="0.8" Margin="0,-5,0,0"
+                       HasShadow="False">
+                    <Label Text="PAST ORDERS" FontSize="13" TextColor="Black"/>
+                </Frame>
 
-            <!-- Profile Options -->
-            <StackLayout Margin="10,15,10,0">
-                <StackLayout Style="{StaticResource NormalOption}">
-                    <Grid RowDefinitions="*,*" ColumnDefinitions="8*,2*">
-                        <Label Text="My Account" Grid.Row="0" Grid.Column="0"  
-                           Style="{StaticResource OptionHeader}"/>
-                        <Image Source="arrow.png" Aspect="AspectFit" HeightRequest="15"
-                           HorizontalOptions="End" VerticalOptions="Center"
-                           Rotation="90" Grid.Row="0" Opacity="0.5" Grid.Column="1"/>
+                <CarouselView x:Name="PastOrders" Margin="10,-6, 10, 0" HeightRequest="270" 
+                              Loop="False">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <!-- Store Name and Status -->
+                                <Grid Grid.Row="0" Margin="5,20" RowDefinitions="20,20,20" ColumnDefinitions="7*,3*">
 
-                        <Label Grid.Row="1" Grid.ColumnSpan="2" Text="Addresses, Favourites and Offers" 
-                               Style="{StaticResource OptionDesc}"/>
+                                    <!-- Store Name -->
+                                    <Label Text="{Binding Store}" FontSize="18" FontFamily="PSemiBold" 
+                                       Grid.Row="0" Grid.Column="0"/>
+
+                                    <!-- Delivered -->
+                                    <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="1"
+                                             HorizontalOptions="End">
+                                        <Label Text="Delivered" FontFamily="JFSemiBold" FontSize="16"/>
+                                        <Image Source="checked.png" Aspect="AspectFit" HeightRequest="20"/>
+                                    </StackLayout>
+
+                                    <!-- Location -->
+                                    <Label Text="BTM" Grid.Row="1" Grid.ColumnSpan="2" 
+                                       FontSize="15" Margin="0" FontFamily="PReg"/>
+
+                                    <!-- Amount -->
+                                    <StackLayout Orientation="Horizontal" Margin="0,0,0,0" 
+                                 Grid.Row="2" Grid.ColumnSpan="2" >
+                                        <Label FontSize="18" VerticalOptions="Center">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="₹ " FontSize="20"/>
+                                                    <Span Text="220" FontFamily="PReg" FontSize="18"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Image Source="arrow.png" Aspect="AspectFit" 
+                                           VerticalOptions="End" Margin="-3,0,0,0"
+                                           HeightRequest="16" Opacity="0.5"/>
+                                    </StackLayout>
+                                </Grid>
+
+                                <!-- Separator -->
+                                <Line X1="0" X2="400" Y1="0" Y2="0" StrokeThickness="1"
+                                  Margin="0" Stroke="black" StrokeDashArray="3,3"/>
+
+                                <!-- Order Summary -->
+                                <StackLayout Margin="0,10">
+                                    <Label FontSize="17" FontFamily="PReg">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Paneer Paratha Combo"/>
+                                                <Span Text="  x  "/>
+                                                <Span Text="1"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label FontSize="15" Margin="0,-5,0,0" FontFamily="PReg">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="June 24, " />
+                                                <Span Text="3:14 AM" />
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </StackLayout>
+
+                                <!--Reorder/Rate Order-->
+                                <Grid ColumnDefinitions="*,*">
+                                    <Frame BackgroundColor="Transparent" HeightRequest="50"
+                                       BorderColor="Orange" Padding="0" Grid.Column="0">
+                                        <Label Text="REORDER" HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center" FontSize="20"
+                                           FontFamily="PSemiBold" TextColor="Orange" Margin="0,5,0,0"/>
+                                    </Frame>
+                                    <Frame BackgroundColor="Transparent" HeightRequest="50"
+                                       BorderColor="Black" Padding="0" Grid.Column="1">
+                                        <Label Text="RATE ORDER" HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center" FontSize="20"
+                                           FontFamily="PSemiBold" TextColor="Black" Margin="0,5,0,0"/>
+                                    </Frame>
+                                </Grid>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+
+                <Frame BackgroundColor="Transparent" Opacity="0.8" HasShadow="False" 
+                       Margin="0,0,0,0" HeightRequest="40" Padding="0">
+
+                    <Grid ColumnDefinitions="9*,*" Margin="10,0">
+                        <Label Text="View more orders" TextTransform="Uppercase" 
+                           FontSize="20" FontFamily="PSemiBold" Grid.Column="0"
+                           VerticalTextAlignment="Center" TextColor="Orange"/>
+                        <Image Source="arrow.png" HeightRequest="20" HorizontalOptions="Center" 
+                           VerticalOptions="Center" Grid.Column="1"/>
                     </Grid>
-                    <Line Style="{StaticResource NormalLine}" VerticalOptions="End" Margin="0,10,0,0"/>
-                </StackLayout>
+                </Frame>
 
-                <StackLayout Style="{StaticResource NormalOption}">
-                    <Grid RowDefinitions="*,*" ColumnDefinitions="8*,2*">
-                        <Label Text="Payments and Refunds" Grid.Row="0" Grid.Column="0"  
-                           Style="{StaticResource OptionHeader}"/>
-                        <Image Source="arrow.png" Aspect="AspectFit" HeightRequest="15"
-                           HorizontalOptions="End" VerticalOptions="Center"
-                           Rotation="90" Grid.Row="0" Opacity="0.5" Grid.Column="1"/>
+                <Frame BackgroundColor="#dfe6e9" Opacity="0.8" HasShadow="False" 
+                       Margin="0,0,0,0" HeightRequest="60" Padding="0"/>
 
-                        <Label Grid.Row="1" Grid.ColumnSpan="2" Text="Refund Status and Payment Modes" 
-                               Style="{StaticResource OptionDesc}"/>
+                <Frame HeightRequest="60" Padding=" 0" BackgroundColor="Transparent"
+                       HasShadow="False">
+                    <Grid ColumnDefinitions="9*,*" Margin="10,0">
+                        <Label Text="LOGOUT" FontSize="20" FontFamily="PSemiBold" Grid.Column="0"
+                           VerticalTextAlignment="Center"/>
+                        <Image Source="logout.png" HeightRequest="20" HorizontalOptions="Center" 
+                           VerticalOptions="Center" Grid.Column="1"/>
                     </Grid>
-                    <Line Style="{StaticResource NormalLine}" VerticalOptions="End" Margin="0,10,0,0"/>
-                </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="logout"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
 
-                <StackLayout Style="{StaticResource NormalOption}">
-                    <Grid RowDefinitions="*,*" ColumnDefinitions="8*,2*">
-                        <Label Text="SWIGGY SUPER" Grid.Row="0" Grid.Column="0"  
-                           Style="{StaticResource OptionHeader}"/>
-                        <Image Source="arrow.png" Aspect="AspectFit" HeightRequest="15"
-                           HorizontalOptions="End" VerticalOptions="Center"
-                           Rotation="90" Grid.Row="0" Opacity="0.5" Grid.Column="1"/>
+                <Frame BackgroundColor="#dfe6e9" Opacity="0.8" HasShadow="False" 
+                       Margin="0,0,0,0" HeightRequest="100" Padding="0"/>
 
-                        <Label Grid.Row="1" Grid.ColumnSpan="2" Text="Enjoy Free Delivery and Buy 1 Get 1 Free" 
-                       Style="{StaticResource OptionDesc}"/>
-                    </Grid>
-                    <Line Style="{StaticResource NormalLine}" VerticalOptions="End" Margin="0,10,0,0"/>
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource NormalOption}">
-                    <Grid RowDefinitions="*,*" ColumnDefinitions="8*,2*">
-                        <Label Text="Swiggy Money" Grid.Row="0" Grid.Column="0"  
-                           Style="{StaticResource OptionHeader}"/>
-                        <Image Source="arrow.png" Aspect="AspectFit" HeightRequest="15"
-                           HorizontalOptions="End" VerticalOptions="Center"
-                           Rotation="90" Grid.Row="0" Opacity="0.5" Grid.Column="1"/>
-
-                        <Label Grid.Row="1" Grid.ColumnSpan="2" Text="View Account Balance and Transaction History" 
-                       Style="{StaticResource OptionDesc}"/>
-                    </Grid>
-                    <Line Style="{StaticResource NormalLine}" VerticalOptions="End" Margin="0,10,0,0"/>
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource NormalOption}">
-                    <Grid RowDefinitions="*,*" ColumnDefinitions="8*,2*">
-                        <Label Text="Help" Grid.Row="0" Grid.Column="0"  
-                           Style="{StaticResource OptionHeader}"/>
-                        <Image Source="arrow.png" Aspect="AspectFit" HeightRequest="15"
-                           HorizontalOptions="End" VerticalOptions="Center"
-                           Rotation="90" Grid.Row="0" Opacity="0.5" Grid.Column="1"/>
-
-                        <Label Grid.Row="1" Grid.ColumnSpan="2" Text="FAQ's and Links" 
-                       Style="{StaticResource OptionDesc}"/>
-                    </Grid>
-                </StackLayout>
             </StackLayout>
-
-            <!-- Past Orders -->
-            <Frame BackgroundColor="#8395a7"
-                   HasShadow="False" Padding="0">
-                <Label Text="Past Orders" Margin="20" FontAttributes="Bold"
-                       VerticalTextAlignment="Center" FontSize="18" Opacity="0.7"/>
-            </Frame>
-
-            <CarouselView x:Name="PastOrders" Margin="10,-6, 10, 0" HeightRequest="150"
-                          ItemTemplate="{StaticResource PastOrders}" Loop="False"/>
-
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
