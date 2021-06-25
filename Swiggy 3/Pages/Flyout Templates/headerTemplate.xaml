@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Swiggy_3.Pages.Flyout_Templates.headerTemplate"
+             BackgroundColor="#ecf0f1">
+    <ContentView.Content>
+        <Grid RowDefinitions="30,20" ColumnDefinitions="7*,3*" 
+              Margin="10,20,10,10" >
+            <Label Text="PARVEZ ALI" FontSize="25"
+                       Grid.Row="0" Grid.Column="0" TextColor="Black" Opacity="0.9"
+                       FontFamily="PSemiBold" HorizontalTextAlignment="Start"/>
+
+            <Label Text="EDIT" TextColor="Orange" FontSize="17" 
+                       Grid.Row="0" Grid.Column="1" FontFamily="RBold"
+                       VerticalOptions="Center" HorizontalOptions="End"/>
+
+            <Label Text="7001871130  .  pa7407071463@gmail.com" FontSize="14" 
+                       HorizontalTextAlignment="Start" TextColor="Black" Opacity="0.7"
+                       Grid.Row="1" Grid.Column="0" FontFamily="RMed"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

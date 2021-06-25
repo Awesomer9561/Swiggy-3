@@ -7,19 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Swiggy_3.Pages.ShellPages
+namespace Swiggy_3.Pages.Flyout_Templates
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Cart : ContentPage
+    public partial class headerTemplate : ContentView
     {
-        public Cart()
+        public headerTemplate()
         {
             InitializeComponent();
-        }
-
-        private void gotoSwiggyPage(object sender, EventArgs e)
-        {
-            //Shell.Current.GoToAsync("swiggy");
         }
     }
 }

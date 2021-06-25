@@ -220,10 +220,10 @@
                 <Frame HeightRequest="60" Padding=" 0" BackgroundColor="Transparent"
                        HasShadow="False">
                     <Grid ColumnDefinitions="9*,*" Margin="10,0">
-                        <Label Text="LOGOUT" FontSize="20" FontFamily="PSemiBold" Grid.Column="0"
+                        <Label Text="LOGOUT" FontFamily="PSemiBold" Grid.Column="0"
                            VerticalTextAlignment="Center"/>
-                        <Image Source="logout.png" HeightRequest="20" HorizontalOptions="Center" 
-                           VerticalOptions="Center" Grid.Column="1"/>
+                        <Image Source="logout.png" HeightRequest="12" HorizontalOptions="Center" 
+                           VerticalOptions="Start" Grid.Column="1"/>
                     </Grid>
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="logout"/>

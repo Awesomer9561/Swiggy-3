@@ -18,8 +18,9 @@ namespace Swiggy_3
             InitializeComponent();
 
             //MainPage = new NavigationPage(new Loin_Page());
-            MainPage = new HomePage();
-            //App.Current.MainPage = new NavigationPage(new SplashScreen());
+            //MainPage = new HomePage();
+            App.Current.MainPage = new NavigationPage(new SplashScreen());
+            //MainPage = new NavigationPage(new HomePageNew());
         }
 
         protected override void OnStart()

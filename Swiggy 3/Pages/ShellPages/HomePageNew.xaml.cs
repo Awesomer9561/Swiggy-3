@@ -12,19 +12,27 @@ using Xamarin.Forms.Xaml;
 namespace Swiggy_3.Pages.ShellPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Swiggy : ContentPage
+    public partial class HomePageNew : ContentPage
     {
+        ObservableCollection<searchCategory> searchCategory { get; set; }
+        ObservableCollection<popularCuisines> cuisineCollection { get; set; }
         ObservableCollection<CategoriesCollection> categories { get; set; }
         ObservableCollection<Brands> brands1 { get; set; }
         ObservableCollection<popularCuration> curations { get; set; }
-        ObservableCollection<string> lstOfoffferCarosalData { get; set; }
+        //ObservableCollection<string> lstOfoffferCarosalData { get; set; }
         ObservableCollection<string> featuredOffers { get; set; }
         ObservableCollection<TopPicks> topPicksImage { get; set; }
 
         string time = "mins";
-        public Swiggy()
+        public HomePageNew()
         {
             InitializeComponent();
+
+            //Search Page
+            setCategoryData2();
+            setCuisineData();
+
+            //Swiggy Page
             setCategoryData();
             //SetOfferCarosaleData();
             setBrandInfo1();
@@ -33,6 +41,141 @@ namespace Swiggy_3.Pages.ShellPages
             setCurationData();
         }
 
+        //Search Page
+        private void setCategoryData2()
+        {
+            searchCategory = new ObservableCollection<searchCategory>();
+            searchCategory.Add(new searchCategory
+            {
+                catframeBgColor = "yellow",
+                catframeImage = "fruits.png",
+                catframeDesc = "Fruits"
+            });
+            searchCategory.Add(new searchCategory
+            {
+                catframeBgColor = "orange",
+                catframeImage = "drinks.png",
+                catframeDesc = "Drinks"
+            });
+            searchCategory.Add(new searchCategory
+            {
+                catframeBgColor = "white",
+                catframeImage = "chips.png",
+                catframeDesc = "Chips"
+            });
+            searchCategory.Add(new searchCategory
+            {
+                catframeBgColor = "yellow",
+                catframeImage = "fruits.png",
+                catframeDesc = "Fruits"
+            });
+            searchCategory.Add(new searchCategory
+            {
+                catframeBgColor = "orange",
+                catframeImage = "drinks.png",
+                catframeDesc = "Drinks"
+            });
+            searchCategory.Add(new searchCategory
+            {
+                catframeBgColor = "white",
+                catframeImage = "chips.png",
+                catframeDesc = "Chips"
+            });
+            searchCategory.Add(new searchCategory
+            {
+                catframeBgColor = "yellow",
+                catframeImage = "fruits.png",
+                catframeDesc = "Fruits"
+            });
+            searchCategory.Add(new searchCategory
+            {
+                catframeBgColor = "orange",
+                catframeImage = "drinks.png",
+                catframeDesc = "Drinks"
+            });
+            searchCategory.Add(new searchCategory
+            {
+                catframeBgColor = "white",
+                catframeImage = "chips.png",
+                catframeDesc = "Chips"
+            });
+            searchCategory.Add(new searchCategory
+            {
+                catframeBgColor = "yellow",
+                catframeImage = "fruits.png",
+                catframeDesc = "Fruits"
+            });
+            searchCategory.Add(new searchCategory
+            {
+                catframeBgColor = "orange",
+                catframeImage = "drinks.png",
+                catframeDesc = "Drinks"
+            });
+            searchCategory.Add(new searchCategory
+            {
+                catframeBgColor = "white",
+                catframeImage = "chips.png",
+                catframeDesc = "Chips"
+            });
+            CategoryCollectionView.ItemsSource = searchCategory;
+        }
+        private void setCuisineData()
+        {
+            cuisineCollection = new ObservableCollection<popularCuisines>();
+            cuisineCollection.Add(new popularCuisines
+            {
+                cuisineImage = "fruits.png",
+                cuisineName = "Fruits"
+            });
+            cuisineCollection.Add(new popularCuisines
+            {
+                cuisineImage = "fruits.png",
+                cuisineName = "Fruits"
+            });
+            cuisineCollection.Add(new popularCuisines
+            {
+                cuisineImage = "fruits.png",
+                cuisineName = "Fruits"
+            });
+            cuisineCollection.Add(new popularCuisines
+            {
+                cuisineImage = "fruits.png",
+                cuisineName = "Fruits"
+            });
+            cuisineCollection.Add(new popularCuisines
+            {
+                cuisineImage = "fruits.png",
+                cuisineName = "Fruits"
+            });
+            cuisineCollection.Add(new popularCuisines
+            {
+                cuisineImage = "fruits.png",
+                cuisineName = "Fruits"
+            });
+            cuisineCollection.Add(new popularCuisines
+            {
+                cuisineImage = "fruits.png",
+                cuisineName = "Fruits"
+            });
+            cuisineCollection.Add(new popularCuisines
+            {
+                cuisineImage = "fruits.png",
+                cuisineName = "Fruits"
+            });
+            cuisineCollection.Add(new popularCuisines
+            {
+                cuisineImage = "fruits.png",
+                cuisineName = "Fruits"
+            });
+            cuisineCollection.Add(new popularCuisines
+            {
+                cuisineImage = "fruits.png",
+                cuisineName = "Fruits"
+            });
+            CuisineCollectionView.ItemsSource = cuisineCollection;
+        }
+
+        //Swiggy Page
         private void setFeaturedOffers()
         {
             featuredOffers = new ObservableCollection<string>();
@@ -48,7 +191,6 @@ namespace Swiggy_3.Pages.ShellPages
             featuredOffers.Add("offer5.png");
             featuredOfferCarousalView.ItemsSource = featuredOffers;
         }
-
         private void setCurationData()
         {
             curations = new ObservableCollection<popularCuration>();
@@ -90,7 +232,6 @@ namespace Swiggy_3.Pages.ShellPages
 
             popularCurations.ItemsSource = curations;
         }
-
         private void setBrandInfo1()
         {
             brands1 = new ObservableCollection<Brands>();
@@ -154,7 +295,7 @@ namespace Swiggy_3.Pages.ShellPages
                 brandName = "Domino's",
                 Time = "15" + time
             });
-            
+
             BrandCollection1.ItemsSource = brands1;
         }
         private void setTopPickImage()
@@ -177,7 +318,7 @@ namespace Swiggy_3.Pages.ShellPages
                 foodImage = "food3.jpg",
                 foodName = "food3",
                 Time = "19" + time
-            }); 
+            });
             topPicksImage.Add(new TopPicks
             {
                 foodImage = "food4.jpg",
@@ -220,7 +361,7 @@ namespace Swiggy_3.Pages.ShellPages
                 foodName = "food2",
                 Time = "19" + time
             });
-            
+
             TopPickCollection.ItemsSource = topPicksImage;
             somethingNewCollectionView.ItemsSource = topPicksImage;
         }
@@ -267,7 +408,7 @@ namespace Swiggy_3.Pages.ShellPages
                 CategoryName = "Healthy",
                 CategoryImage = "healthy.png",
                 Description = "For your kind\nof healthy"
-            }); 
+            });
             categories.Add(new CategoriesCollection
             {
                 CategoryName = "Genie",
@@ -285,7 +426,7 @@ namespace Swiggy_3.Pages.ShellPages
                 CategoryName = "Healthy",
                 CategoryImage = "healthy.png",
                 Description = "For your kind\nof healthy"
-            }); 
+            });
             categories.Add(new CategoriesCollection
             {
                 CategoryName = "Genie",
@@ -325,13 +466,17 @@ namespace Swiggy_3.Pages.ShellPages
 
             CategoryColumn.ItemsSource = categories;
         }
-
         private void CategorySelected(object sender, SelectionChangedEventArgs e)
         {
 
         }
-
         private void instamart(object sender, EventArgs e)
+        {
+
+        }
+
+        //Cart
+        private void gotoSwiggyPage(object sender, EventArgs e)
         {
 
         }
