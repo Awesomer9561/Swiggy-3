@@ -1,14 +1,9 @@
-﻿using Swiggy_3.Pages.ShellPages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Swiggy_3.Pages.Login_Page;
+using Swiggy_3.Pages.ShellPages;
 using System.Threading.Tasks;
-using Swiggy_3.Pages.Login_Page;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Xamarin.Essentials;
 
 namespace Swiggy_3.Pages.SplashScreen
 {
@@ -23,14 +18,13 @@ namespace Swiggy_3.Pages.SplashScreen
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            await splashscreen.ScaleTo(100, 0);
-
-            await Task.Delay(1500);
-            await splashscreen.ScaleTo(20, 700, easing: Easing.Linear);
+            await splashscreen.ScaleTo(40, 0);
 
             await Task.Delay(1000);
-            await splashscreen.ScaleTo(1, 200, easing: Easing.BounceOut);
+            await splashscreen.ScaleTo(1, 1000, easing: Easing.Linear);
 
+            await Task.Delay(2000);
+            await splashscreen.ScaleTo(1, 100, easing: Easing.Linear);
             //App.Current.MainPage = new HomePage();
             //App.Current.MainPage = new NavigationPage(new Loin_Page());
 

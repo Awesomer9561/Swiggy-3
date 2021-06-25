@@ -29,7 +29,5 @@ namespace Swiggy_3.Pages.ShellPages
             AppUtilities.Logout();
             DisplayAlert("You have been logged out", "Please close the app and restart to login", "Ok");
         }
-
-
     }
 }
