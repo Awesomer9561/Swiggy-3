@@ -19,7 +19,7 @@ namespace Swiggy_3.Pages.ShellPages
         ObservableCollection<CategoriesCollection> categories { get; set; }
         ObservableCollection<Brands> brands1 { get; set; }
         ObservableCollection<popularCuration> curations { get; set; }
-        //ObservableCollection<string> lstOfoffferCarosalData { get; set; }
+        ObservableCollection<string> lstOfoffferCarosalData { get; set; }
         ObservableCollection<string> featuredOffers { get; set; }
         ObservableCollection<TopPicks> topPicksImage { get; set; }
 
@@ -34,7 +34,7 @@ namespace Swiggy_3.Pages.ShellPages
 
             //Swiggy Page
             setCategoryData();
-            //SetOfferCarosaleData();
+            SetOfferCarosaleData();
             setBrandInfo1();
             setFeaturedOffers();
             setTopPickImage();
@@ -182,13 +182,13 @@ namespace Swiggy_3.Pages.ShellPages
             featuredOffers.Add("offer1.jpg");
             featuredOffers.Add("offer2.jpg");
             featuredOffers.Add("offer3.jpg");
-            featuredOffers.Add("offer4.jpg");
-            featuredOffers.Add("offer5.png");
-            featuredOffers.Add("offer1.jpg");
-            featuredOffers.Add("offer2.jpg");
             featuredOffers.Add("offer3.jpg");
             featuredOffers.Add("offer4.jpg");
             featuredOffers.Add("offer5.png");
+            featuredOffers.Add("offer3.jpg");
+            featuredOffers.Add("offer5.png");
+            featuredOffers.Add("offer4.jpg");
+            featuredOffers.Add("offer1.jpg");
             featuredOfferCarousalView.ItemsSource = featuredOffers;
         }
         private void setCurationData()
@@ -229,12 +229,107 @@ namespace Swiggy_3.Pages.ShellPages
                 foodImage = "foodPizza.png",
                 foodName = "Pizza"
             });
-
+            curations.Add(new popularCuration
+            {
+                foodImage = "foodBiryani.png",
+                foodName = "Biryani"
+            });
+            curations.Add(new popularCuration
+            {
+                foodImage = "foodChinese.png",
+                foodName = "Chinese"
+            });
+            curations.Add(new popularCuration
+            {
+                foodImage = "foodPizza.png",
+                foodName = "Pizza"
+            });
+            curations.Add(new popularCuration
+            {
+                foodImage = "foodVegBirani.png",
+                foodName = "Veg Biryani"
+            });
+            curations.Add(new popularCuration
+            {
+                foodImage = "foodBiryani.png",
+                foodName = "Biryani"
+            });
+            curations.Add(new popularCuration
+            {
+                foodImage = "foodChinese.png",
+                foodName = "Chinese"
+            });
+            curations.Add(new popularCuration
+            {
+                foodImage = "foodPizza.png",
+                foodName = "Pizza"
+            });
+            
             popularCurations.ItemsSource = curations;
         }
         private void setBrandInfo1()
         {
             brands1 = new ObservableCollection<Brands>();
+            brands1.Add(new Brands
+            {
+                brandImage = "mcdlogo.jpg",
+                brandName = "McDonald's",
+                Time = "10" + time
+            });
+            brands1.Add(new Brands
+            {
+                brandImage = "logo1.jpg",
+                brandName = "The Bowl\nCompany",
+                Time = "14" + time
+            });
+            brands1.Add(new Brands
+            {
+                brandImage = "logo2.jpg",
+                brandName = "Domino's",
+                Time = "15" + time
+            });
+            brands1.Add(new Brands
+            {
+                brandImage = "logo3.jpg",
+                brandName = "KFC",
+                Time = "20" + time
+            });
+            brands1.Add(new Brands
+            {
+                brandImage = "logo4.jpg",
+                brandName = "Subway",
+                Time = "35" + time
+            });
+            brands1.Add(new Brands
+            {
+                brandImage = "logo3.jpg",
+                brandName = "KFC",
+                Time = "20" + time
+            });
+            brands1.Add(new Brands
+            {
+                brandImage = "logo4.jpg",
+                brandName = "Subway",
+                Time = "35" + time
+            });
+            brands1.Add(new Brands
+            {
+                brandImage = "logo1.jpg",
+                brandName = "The Bowl\nCompany",
+                Time = "14" + time
+            });
+            brands1.Add(new Brands
+            {
+                brandImage = "mcdlogo.jpg",
+                brandName = "McDonald's",
+                Time = "10" + time
+            });
+            brands1.Add(new Brands
+            {
+                brandImage = "logo2.jpg",
+                brandName = "Domino's",
+                Time = "15" + time
+            });
             brands1.Add(new Brands
             {
                 brandImage = "mcdlogo.jpg",
@@ -366,7 +461,7 @@ namespace Swiggy_3.Pages.ShellPages
             somethingNewCollectionView.ItemsSource = topPicksImage;
         }
 
-        /*private void SetOfferCarosaleData()
+        private void SetOfferCarosaleData()
         {
             lstOfoffferCarosalData = new ObservableCollection<string>();
             lstOfoffferCarosalData.Add("* 100+ OUT LET WITH GREAT DISCOUNTS");
@@ -375,7 +470,7 @@ namespace Swiggy_3.Pages.ShellPages
             lstOfoffferCarosalData.Add("* 600+ OUT LET WITH GREAT DISCOUNTS");
             carousalOffers.ItemsSource = lstOfoffferCarosalData;
 
-        }*/
+        }
         private void setCategoryData()
         {
             categories = new ObservableCollection<Models.CategoriesCollection>();
@@ -478,17 +573,17 @@ namespace Swiggy_3.Pages.ShellPages
         //Cart
         private void gotoSwiggyPage(object sender, EventArgs e)
         {
-
+           
         }
 
-        /*protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            Device.StartTimer(TimeSpan.FromSeconds(5), (Func<bool>)(() =>
-            {
-                carousalOffers.Position = (carousalOffers.Position + 1) % lstOfoffferCarosalData.Count;
-                return true;
-            }));
-        }*/
+        //protected override void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        //    Device.StartTimer(TimeSpan.FromSeconds(5), (Func<bool>)(() =>
+        //    {
+        //        carousalOffers.Position = (carousalOffers.Position + 1) % lstOfoffferCarosalData.Count;
+        //        return true;
+        //    }));
+        //}
     }
 }

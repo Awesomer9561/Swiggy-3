@@ -46,7 +46,7 @@
         <shell:HomePageNew/>
     </FlyoutItem>
 
-    <FlyoutItem Title="My Account">
+    <FlyoutItem Title="My Account" IsEnabled="False">
         <Shell.ItemTemplate>
             <DataTemplate>
                 <StackLayout>
@@ -121,7 +121,7 @@
             <DataTemplate>
                 <StackLayout>
                     <Frame BackgroundColor="#dfe6e9" Opacity="0.8" Margin="0,-5,0,0"
-                       HasShadow="False"/>
+                       HasShadow="False" HeightRequest="8"/>
                 </StackLayout>
             </DataTemplate>
         </Shell.MenuItemTemplate>
@@ -192,7 +192,7 @@
                         </Label>
                     </StackLayout>
 
-                    <!--Reorder/Rate Order-->
+                    <!--Reorder /Rate Order-->
                     <Grid ColumnDefinitions="*,*" Margin="10,0">
                         <Frame BackgroundColor="Transparent" HeightRequest="50"
                                        BorderColor="Orange" Padding="0" Grid.Column="0">
@@ -208,9 +208,11 @@
                         </Frame>
                     </Grid>
 
+                    <!--Line-->
                     <Line X1="0" X2="400" Y1="0" Y2="0" StrokeThickness="1" Margin="0,20,0,0"
                           Stroke="black"/>
                     
+                    <!--View more orders-->
                     <Grid ColumnDefinitions="9*,*" Margin="10">
                         <Label Text="View more orders" TextTransform="Uppercase" 
                            FontSize="20" FontFamily="PSemiBold" Grid.Column="0"
@@ -228,21 +230,18 @@
         <Shell.MenuItemTemplate>
             <DataTemplate>
                 <StackLayout>
-                    <Frame BackgroundColor="#dfe6e9" Opacity="0.8" Margin="0,-5,0,0"
-                       HasShadow="False"/>
+                    <Frame BackgroundColor="#dfe6e9" Opacity="0.8" Margin="0,0,0,0"
+                       HasShadow="False" HeightRequest="8"/>
                 </StackLayout>
             </DataTemplate>
         </Shell.MenuItemTemplate>
     </MenuItem>
 
-    <!---->
-    <MenuItem >
+    <!--Help and Logout-->
+    <MenuItem>
         <Shell.MenuItemTemplate>
             <DataTemplate>
                 <StackLayout>
-                    <Line X1="0" X2="400" Y1="0" Y2="0" StrokeThickness="1" 
-                      Grid.Row="7"
-                      Margin="0,0" Stroke="black" />
                     <Grid RowDefinitions="auto,auto" ColumnDefinitions="9*,*" VerticalOptions="Center"
                   Grid.Row="6" Margin="10,10,10,0" >
                         <Label Text="Help" TextColor="Black" Grid.Row="0" Grid.Column="0"

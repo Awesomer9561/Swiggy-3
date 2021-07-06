@@ -118,7 +118,7 @@
                 </Frame>
 
                 <CarouselView x:Name="PastOrders" Margin="10,-6, 10, 0" HeightRequest="270" 
-                              Loop="False">
+                              Loop="True" >
                     <CarouselView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout>
@@ -202,10 +202,14 @@
                     </CarouselView.ItemTemplate>
                 </CarouselView>
 
+                <!--Line-->
+                <Line X1="0" X2="400" Y1="0" Y2="0" StrokeThickness="1" Margin="0,0,0,0"
+                          Stroke="black"/>
+                
                 <Frame BackgroundColor="Transparent" Opacity="0.8" HasShadow="False" 
-                       Margin="0,0,0,0" HeightRequest="40" Padding="0">
+                       Margin="0,0,0,0" HeightRequest="50" Padding="0">
 
-                    <Grid ColumnDefinitions="9*,*" Margin="10,0">
+                    <Grid ColumnDefinitions="9*,*" Margin="10,0" HeightRequest="40">
                         <Label Text="View more orders" TextTransform="Uppercase" 
                            FontSize="20" FontFamily="PSemiBold" Grid.Column="0"
                            VerticalTextAlignment="Center" TextColor="Orange"/>
@@ -215,15 +219,15 @@
                 </Frame>
 
                 <Frame BackgroundColor="#dfe6e9" Opacity="0.8" HasShadow="False" 
-                       Margin="0,0,0,0" HeightRequest="60" Padding="0"/>
+                       Margin="0,0,0,0" HeightRequest="50" Padding="0"/>
 
                 <Frame HeightRequest="60" Padding=" 0" BackgroundColor="Transparent"
                        HasShadow="False">
                     <Grid ColumnDefinitions="9*,*" Margin="10,0">
-                        <Label Text="LOGOUT" FontFamily="PSemiBold" Grid.Column="0"
+                        <Label Text="LOGOUT" FontSize="20" FontFamily="PSemiBold" Grid.Column="0"
                            VerticalTextAlignment="Center"/>
-                        <Image Source="logout.png" HeightRequest="12" HorizontalOptions="Center" 
-                           VerticalOptions="Start" Grid.Column="1"/>
+                        <Image Source="logout.png" HeightRequest="20" HorizontalOptions="Center" 
+                           VerticalOptions="Center" Grid.Column="1"/>
                     </Grid>
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="logout"/>
